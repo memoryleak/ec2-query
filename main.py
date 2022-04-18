@@ -47,6 +47,9 @@ def update():
                     if instance['State']['Name'] != 'running':
                         continue
 
+                    if 'Tags' not in instance:
+                        continue
+
                     name = ""
                     for tag in instance['Tags']:
                         if tag['Key'] == 'Name':
